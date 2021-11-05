@@ -41,9 +41,13 @@ class Router
             $this->view($callback, "main");
             exit;
         }
-        var_dump($callback);
-        exit;
-        echo $callback;
+
+        if (is_array($callback))
+        {
+            $callback[0] = new $callback[0]();
+        }
+
+        return call_user_func($callback);
     }
 
     public function renderPartialView($view)

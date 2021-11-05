@@ -1,1 +1,3 @@
-<h1>CREATE PAGE</h1>
+<form action="createProcess">
+
+</form>

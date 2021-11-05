@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use app\controllers\UserController;
 use app\core\Application;
 
 $app = new Application();
@@ -9,7 +10,8 @@ $app->router->get("home", "home");
 $app->router->get("", "home");
 $app->router->get("test", "home");
 $app->router->get("index", "home");
-$app->router->get("create", "create");
+$app->router->get("create", [UserController::class, "create"]);
+$app->router->post("createProcess", [UserController::class, "createProcess"]);
 
 //echo "<pre>";
 //var_dump($app ->router->request->getPath());
