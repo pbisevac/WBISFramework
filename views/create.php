@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="adress">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Submit</button>

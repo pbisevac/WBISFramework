@@ -22,4 +22,14 @@ class Request
     {
         return strtolower($_SERVER["REQUEST_METHOD"]);
     }
+
+    public function getOne($key)
+    {
+        return $_REQUEST[$key];
+    }
+
+    public function getAll()
+    {
+        return $_REQUEST;
+    }
 }
