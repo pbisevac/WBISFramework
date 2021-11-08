@@ -1,15 +1,18 @@
 <?php
 namespace app\controllers;
 
+use app\core\DBConnection;
 use app\core\Router;
 
 class UserController
 {
     public Router $router;
+    public DBConnection $db;
 
     public function __construct()
     {
         $this->router = new Router();
+        $this->db = new DBConnection();
     }
 
     public function create()
@@ -19,6 +22,8 @@ class UserController
 
     public function createProcess()
     {
+        
+        var_dump($_REQUEST); exit;
     }
 
     public function edit()

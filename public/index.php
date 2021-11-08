@@ -10,8 +10,8 @@ $app->router->get("home", "home");
 $app->router->get("", "home");
 $app->router->get("test", "home");
 $app->router->get("index", "home");
-$app->router->get("create", [UserController::class, "create"]);
-$app->router->post("createProcess", [UserController::class, "createProcess"]);
+$app->router->get("createUser", [UserController::class, "create"]);
+$app->router->post("createUserProcess", [UserController::class, "createProcess"]);
 
 //echo "<pre>";
 //var_dump($app ->router->request->getPath());

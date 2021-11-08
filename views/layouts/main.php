@@ -272,7 +272,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link " href="create">
+            <a class="nav-link " href="createUser">
                 <i class="bi bi-journal-text"></i>
                 <span>CREATE</span>
             </a>
