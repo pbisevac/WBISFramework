@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa7097c-f5a5-4f8d-befa-735f93a6ec68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/views/homeUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homeUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/homeUser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

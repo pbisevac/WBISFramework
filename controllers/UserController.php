@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\core\DBConnection;
 use app\core\Request;
 use app\core\Router;
+use app\models\UserModel;
 
 class UserController
 {
@@ -22,7 +23,9 @@ class UserController
     {
         $result = $this->db->mysqli->query("SELECT * FROM users") or die($this->db->mysqli->error);
 
-        return $this->router->view("homeUser", "main");
+        $params = $result ->fetch_assoc();
+
+        return $this->router->viewWithParams("homeUser", "main", $params);
     }
 
     public function create()
@@ -32,10 +35,14 @@ class UserController
 
     public function createProcess()
     {
-        $fullname = $this->request->getOne("fullname");
-        $email = $this->request->getOne("email");
-        $passowrd = $this->request->getOne("password");
-        $address = $this->request->getOne("address");
+        $model = new UserModel();
+        $model->loadData($this->request->getAll());
+//        $model->validate();
+//
+//        if ($model->errors != null)
+//        {
+//            return $this->router->viewWithParams("create", "main", $model);
+//        }
 
         $this->db->mysqli->query("INSERT INTO users (full_name, email, password, adress) VALUES ('$fullname', '$email', '$passowrd', '$address')") or die($this->db->mysqli->error);
 

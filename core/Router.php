@@ -57,6 +57,21 @@ class Router
         return ob_get_clean();
     }
 
+    public function renderPartialViewWithParams($view, $params)
+    {
+        if ($params !==null)
+        {
+            foreach ($params as $key => $value)
+            {
+                $$key = $value;
+            }
+        }
+
+        ob_start();
+        include_once __DIR__ . "/../views/$view.php";
+        return ob_get_clean();
+    }
+
     public function renderLayout($layout)
     {
         ob_start();
@@ -68,6 +83,16 @@ class Router
     {
         $layoutViewContent = $this->renderLayout($layout);
         $partialViewContent = $this->renderPartialView($partialView);
+
+        $view = str_replace("{{ renderBody }}", $partialViewContent, $layoutViewContent);
+
+        echo $view;
+    }
+
+    public function viewWithParams($partialView, $layout, $params)
+    {
+        $layoutViewContent = $this->renderLayout($layout);
+        $partialViewContent = $this->renderPartialViewWithParams($partialView, $params);
 
         $view = str_replace("{{ renderBody }}", $partialViewContent, $layoutViewContent);
 

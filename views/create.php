@@ -6,7 +6,7 @@
             <form method="post" action="createUserProcess" class="row g-3">
                 <div class="col-12">
                     <label for="inputNanme4" class="form-label">Ime i prezime</label>
-                    <input type="text" class="form-control" id="inputNanme4" name="fullname">
+                    <input type="text" class="form-control" id="inputNanme4" name="full_name">
                 </div>
                 <div class="col-12">
                     <label for="inputEmail4" class="form-label">Email</label>
