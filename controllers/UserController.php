@@ -1,9 +1,11 @@
 <?php
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\DBConnection;
 use app\core\Request;
 use app\core\Router;
+use app\core\Session;
 use app\models\UserModel;
 
 class UserController
@@ -46,7 +48,9 @@ class UserController
 
         $this->db->mysqli->query("INSERT INTO users (full_name, email, password, address) VALUES ('$model->full_name', '$model->email', '$model->password', '$model->address')") or die($this->db->mysqli->error);
 
-        return $this->router->view("create", "main");
+        Application::$app->session->setFlash("user", "Uspesno Kreiran user!");
+
+        return $this->router->viewWithParams("create", "main", $model);
     }
 
     public function edit()

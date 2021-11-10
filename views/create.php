@@ -1,5 +1,15 @@
 <?php
+use app\core\Application;
+
 /** @var $params \app\models\UserModel */
+
+
+if (Application::$app->session->getFlash("user")) {
+    $message = Application::$app->session->getFlash("user");
+    echo "<script>";
+    echo "toastr.success('$message')";
+    echo "</script>";
+}
 ?>
 
 <div class="col-md-12">
@@ -12,7 +22,7 @@
                     <label for="inputNanme4" class="form-label">Ime i prezime</label>
                     <input type="text" class="form-control" id="inputNanme4" name="full_name">
                     <?php
-                    if ($params->errors['full_name'] !== null)
+                    if ($params->errors !== null)
                     {
                         echo "<ul>";
                         foreach ($params->errors['full_name'] as $errorMessage)
