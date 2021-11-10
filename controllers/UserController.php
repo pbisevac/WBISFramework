@@ -37,14 +37,14 @@ class UserController
     {
         $model = new UserModel();
         $model->loadData($this->request->getAll());
-//        $model->validate();
-//
-//        if ($model->errors != null)
-//        {
-//            return $this->router->viewWithParams("create", "main", $model);
-//        }
+        $model->validate();
 
-        $this->db->mysqli->query("INSERT INTO users (full_name, email, password, adress) VALUES ('$fullname', '$email', '$passowrd', '$address')") or die($this->db->mysqli->error);
+        if ($model->errors !== null)
+        {
+            return $this->router->viewWithParams("home", "main", $model);
+        }
+
+        $this->db->mysqli->query("INSERT INTO users (full_name, email, password, address) VALUES ('$model->full_name', '$model->email', '$model->password', '$model->address')") or die($this->db->mysqli->error);
 
         return $this->router->view("create", "main");
     }

@@ -2,7 +2,8 @@
 
 namespace app\core;
 
-class DBModel extends Model
+abstract class DBModel extends Model
 {
 
+    abstract public function rules(): array;
 }

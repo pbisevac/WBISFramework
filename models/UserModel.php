@@ -10,4 +10,12 @@ class UserModel extends DBModel
     public $email;
     public $password;
     public $address;
+
+    public function rules(): array
+    {
+        return [
+            "email" => [self::RULE_EMAIL],
+            "password" => [self::RULE_REQUIRED, self::RULE_EMAIL]
+        ];
+    }
 }

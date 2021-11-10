@@ -4,8 +4,9 @@
     <list default="true" id="7aa7097c-f5a5-4f8d-befa-735f93a6ec68" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/DBModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/DBModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/homeUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/homeUser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +37,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -61,6 +63,7 @@
       <workItem from="1636203653170" duration="95000" />
       <workItem from="1636281487569" duration="107000" />
       <workItem from="1636359054230" duration="2518000" />
+      <workItem from="1636531429969" duration="2339000" />
     </task>
     <servers />
   </component>
