@@ -25,12 +25,12 @@ class UserController
 
         $params = $result ->fetch_assoc();
 
-        return $this->router->viewWithParams("homeUser", "main", $params);
+        return $this->router->viewWithParams("home", "main", $params);
     }
 
     public function create()
     {
-        return $this->router->view("create", "main");
+        return $this->router->viewWithParams("create", "main", new UserModel());
     }
 
     public function createProcess()
@@ -41,7 +41,7 @@ class UserController
 
         if ($model->errors !== null)
         {
-            return $this->router->viewWithParams("home", "main", $model);
+            return $this->router->viewWithParams("create", "main", $model);
         }
 
         $this->db->mysqli->query("INSERT INTO users (full_name, email, password, address) VALUES ('$model->full_name', '$model->email', '$model->password', '$model->address')") or die($this->db->mysqli->error);

@@ -15,7 +15,8 @@ class UserModel extends DBModel
     {
         return [
             "email" => [self::RULE_EMAIL],
-            "password" => [self::RULE_REQUIRED, self::RULE_EMAIL]
+            "password" => [self::RULE_REQUIRED],
+            "full_name" => [self::RULE_REQUIRED]
         ];
     }
 }
