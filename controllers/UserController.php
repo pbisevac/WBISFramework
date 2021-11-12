@@ -2,25 +2,15 @@
 namespace app\controllers;
 
 use app\core\Application;
+use app\core\Controller;
 use app\core\DBConnection;
 use app\core\Request;
 use app\core\Router;
 use app\core\Session;
 use app\models\UserModel;
 
-class UserController
+class UserController extends Controller
 {
-    public Router $router;
-    public Request $request;
-    public DBConnection $db;
-
-    public function __construct()
-    {
-        $this->router = new Router();
-        $this->db = new DBConnection();
-        $this->request = new Request();
-    }
-
     public function home()
     {
         $result = $this->db->mysqli->query("SELECT * FROM users") or die($this->db->mysqli->error);
@@ -61,5 +51,12 @@ class UserController
     public function delete()
     {
         return $this->router->view("delete", "main");
+    }
+
+    public function authorize(): array
+    {
+       return [
+           "Administrator"
+       ];
     }
 }
