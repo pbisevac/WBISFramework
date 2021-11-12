@@ -43,7 +43,7 @@ abstract class Controller
 
         if (!$roleAccess and !$guestAccess)
         {
-            header("location:" . "accessDenied");
+            $this->request->redirect("accessDenied");
         }
     }
 

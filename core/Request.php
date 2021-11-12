@@ -32,4 +32,9 @@ class Request
     {
         return $_REQUEST;
     }
+
+    public function redirect($path)
+    {
+        header("location:" . $path);
+    }
 }

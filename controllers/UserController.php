@@ -3,10 +3,6 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
-use app\core\DBConnection;
-use app\core\Request;
-use app\core\Router;
-use app\core\Session;
 use app\models\UserModel;
 
 class UserController extends Controller

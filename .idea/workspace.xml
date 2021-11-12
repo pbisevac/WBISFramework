@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa7097c-f5a5-4f8d-befa-735f93a6ec68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/accessDenied.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/RegistrationModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/registration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/DBConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/DBConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/accessDenied.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/accessDenied.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/notFound.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/notFound.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +74,7 @@
       <workItem from="1636281487569" duration="107000" />
       <workItem from="1636359054230" duration="2518000" />
       <workItem from="1636531429969" duration="9540000" />
-      <workItem from="1636704671278" duration="2854000" />
+      <workItem from="1636704671278" duration="9016000" />
     </task>
     <servers />
   </component>
@@ -82,5 +92,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/public/index.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

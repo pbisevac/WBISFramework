@@ -30,16 +30,12 @@ class Router
 
         if ($callback === false)
         {
-            http_response_code(404);
-            $callback = "notFound";
-            echo $this->renderPartialView($callback);
-            exit;
+            $this->request->redirect("notFound"); exit;
         }
 
         if (is_string($callback))
         {
-            $this->view($callback, "main");
-            exit;
+            $this->view($callback, "main"); exit;
         }
 
         if (is_array($callback))

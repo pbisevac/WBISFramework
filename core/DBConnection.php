@@ -6,11 +6,11 @@ use mysqli;
 
 class DBConnection
 {
-    public $mysqli;
+    public mysqli $con;
 
     public function __construct()
     {
-        $this->mysqli = new mysqli("localhost", "root", "", "news") or die(mysqli_error($this->mysqli));
+        $this->con = new mysqli("localhost", "root", "", "news") or die(mysqli_error($this->mysqli));
     }
 
     public function conn()
