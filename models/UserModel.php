@@ -19,4 +19,26 @@ class UserModel extends DBModel
             "full_name" => [self::RULE_REQUIRED]
         ];
     }
+
+    public function tableName()
+    {
+        // TODO: Implement tableName() method.
+    }
+
+    public function attributes(): array
+    {
+        // TODO: Implement attributes() method.
+    }
+
+    public function attributesForUpdate(): array
+    {
+        return [
+            "full_name",
+            "address",
+            "password",
+            "data_updated",
+            "user_updated",
+            "active"
+        ];
+    }
 }

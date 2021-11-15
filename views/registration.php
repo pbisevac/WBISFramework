@@ -6,6 +6,7 @@ use app\core\Application;
 
 if (Application::$app->session->getFlash("success")) {
     $message = Application::$app->session->getFlash("success");
+
     echo "<script>";
     echo "toastr.success('$message')";
     echo "</script>";

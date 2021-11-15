@@ -8,6 +8,7 @@ abstract class Model
     public DBConnection $db;
 
     public const RULE_EMAIL = "email";
+    public const RULE_EMAIL_UNIQUE = "email_unique";
     public const RULE_REQUIRED = "required";
 
     abstract public function rules() : array;
@@ -44,6 +45,9 @@ abstract class Model
 
                 if ($rule === self::RULE_EMAIL && !filter_var($valueForAttribute, FILTER_VALIDATE_EMAIL))
                     $this->errors[$attribute][] = "Polje  $attribute mora biti u email formatu!";
+
+                if ($rule === self::RULE_EMAIL_UNIQUE && !$this->findEmail($valueForAttribute))
+                    $this->errors[$attribute][] = "Polje  $attribute mora jedinstveno!";
             }
         }
     }

@@ -38,7 +38,7 @@ class AuthController extends  Controller
     public function registrationProcess()
     {
         $model = new RegistrationModel();
-        $model->loadData($this->request->getAll());
+        $model->loadData($this->request->getOne("email = 'test@test.com'"));
 
         $model->validate();
 
@@ -48,7 +48,7 @@ class AuthController extends  Controller
             return $this->router->viewWithParams("registration", "auth", $model);
         }
 
-        $model->create($model);
+        $model->registration($model);
 
         Application::$app->session->setFlash("success", "Uspesno Kreiran user!");
 
