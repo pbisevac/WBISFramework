@@ -4,6 +4,7 @@ namespace app\core;
 
 abstract class DBModel extends Model
 {
+    public $id;
     public $data_created;
     public $data_updated;
     public $user_created;

@@ -4,7 +4,7 @@ namespace app\models;
 
 use app\core\DBModel;
 
-class RegistrationModel extends DBModel
+class AuthModel extends DBModel
 {
     public $email;
     public $password;
@@ -12,12 +12,12 @@ class RegistrationModel extends DBModel
     public function rules(): array
     {
         return [
-            "email" => [self::RULE_EMAIL, self::RULE_EMAIL_UNIQUE],
+            "email" => [self::RULE_EMAIL],
             "password" => [self::RULE_REQUIRED]
         ];
     }
 
-    public function registration(RegistrationModel $model)
+    public function registration(AuthModel $model)
     {
         $model->password = password_hash($model->password, PASSWORD_DEFAULT);
         $date = date('Y-m-d H-i-s');
@@ -35,6 +35,24 @@ class RegistrationModel extends DBModel
         $id_user = $user_result["id"];
 
         $users_roles = $this->db->con->query("INSERT INTO users_roles (id_user, id_role, active, data_created, data_updated, user_created, user_updated, valid_from, valid_to) VALUES ($id_user, $id_role, true, '$date', '$date', 1, 1, '$date', '2025-01-01 12-00-00')") or die($this->db->con->error);
+    }
+
+    public function login(AuthModel $model)
+    {
+      $modelFromDB = new AuthModel();
+
+      $modelFromDB->loadData($modelFromDB->getOne("email = '$model->email'"));
+
+
+      if ($modelFromDB->email !== null)
+      {
+          if (password_verify($model->password, $modelFromDB->password))
+          {
+              return true;
+          }
+      }
+
+      return false;
     }
 
     public function tableName()

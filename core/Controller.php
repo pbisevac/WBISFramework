@@ -13,7 +13,7 @@ abstract class Controller
         $this->request = new Request();
 
         $roles = $this->authorize();
-        $user = Application::$app->session->get("user");
+        $user = Application::$app->session->get("logged_in_user");
         $this->checkRoles($roles, $user);
     }
 

@@ -1,7 +1,7 @@
 <?php
 use app\core\Application;
 
-/** @var $params \app\models\RegistrationModel */
+/** @var $params \app\models\AuthModel */
 
 
 if (Application::$app->session->getFlash("success")) {
@@ -25,7 +25,7 @@ if (Application::$app->session->getFlash("error")) {
         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
             <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                <a href="news" class="logo d-flex align-items-center w-auto">
                     <img src="assets/img/logo.png" alt="">
                     <span class="d-none d-lg-block">News</span>
                 </a>
@@ -46,14 +46,30 @@ if (Application::$app->session->getFlash("error")) {
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 <input type="text" name="email" class="form-control" id="email" required>
-                                <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                <?php
+                                if (isset($params) and $params->errors !== null and isset($params->errors['email']))
+                                {
+                                    echo "<ul style='padding-top: 10px !important; margin: 0px !important; list-style-type: none;'>";
+                                    foreach ($params->errors['email'] as $errorMessage)
+                                        echo "<li class='text-danger'>$errorMessage</li>";
+                                    echo "</ul>";
+                                }
+                                ?>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <label for="yourPassword" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="yourPassword" required>
-                            <div class="invalid-feedback">Please enter your password!</div>
+                            <?php
+                            if (isset($params) and $params->errors !== null and isset($params->errors['password']))
+                            {
+                                echo "<ul style='padding-top: 10px !important; margin: 0px !important; list-style-type: none;'>";
+                                foreach ($params->errors['password'] as $errorMessage)
+                                    echo "<li class='text-danger'>$errorMessage</li>";
+                                echo "</ul>";
+                            }
+                            ?>
                         </div>
 
                         <div class="col-12">

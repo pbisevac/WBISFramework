@@ -52,7 +52,8 @@ class UserController extends Controller
     public function authorize(): array
     {
        return [
-           "Administrator"
+           "admin",
+           "korisnik"
        ];
     }
 }

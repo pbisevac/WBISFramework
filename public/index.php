@@ -15,10 +15,12 @@ $app->router->get("accessDenied", [AuthController::class, "accessDenied"]);
 $app->router->get("notFound", [AuthController::class, "notFound"]);
 $app->router->get("registration", [AuthController::class, "registration"]);
 $app->router->get("login", [AuthController::class, "login"]);
+$app->router->get("logout", [AuthController::class, "logout"]);
 $app->router->get("createUser", [UserController::class, "create"]);
 $app->router->get("homeUser", [UserController::class, "home"]);
 $app->router->post("createUserProcess", [UserController::class, "createProcess"]);
 $app->router->post("registrationProcess", [AuthController::class, "registrationProcess"]);
+$app->router->post("loginProcess", [AuthController::class, "loginProcess"]);
 
 //echo "<pre>";
 //var_dump($app ->router->request->getPath());
