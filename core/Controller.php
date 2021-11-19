@@ -35,7 +35,7 @@ abstract class Controller
                 }
             }
 
-            if ($role === "Guest")
+            if ($role === "guest")
             {
                 $guestAccess = true;
             }
