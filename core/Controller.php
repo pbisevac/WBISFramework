@@ -43,7 +43,7 @@ abstract class Controller
 
         if (!$roleAccess and !$guestAccess)
         {
-            $this->request->redirect("accessDenied");
+            $this->request->redirect("/accessDenied");
         }
     }
 

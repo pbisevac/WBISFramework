@@ -4,11 +4,10 @@ namespace app\models;
 
 use app\core\DBModel;
 
-class NewsLocalizations extends DBModel
+class NewsCategoryModel extends DBModel
 {
-    public $title_news;
-    public $content_news;
-    public $culture_code;
+    public $id_news;
+    public $id_category;
 
     public function rules(): array
     {
@@ -17,24 +16,21 @@ class NewsLocalizations extends DBModel
 
     public function tableName()
     {
-        return "news_localizations";
+        return "news_category";
     }
 
     public function attributes(): array
     {
         return [
-            "title_news",
-            "content_news",
-            "culture_code"
+            "id_news",
+            "id_category"
         ];
     }
 
     public function attributesForUpdate(): array
     {
         return [
-            "title_news",
-            "content_news",
-            "culture_code"
+            "active"
         ];
     }
 }

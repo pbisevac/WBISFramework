@@ -2,7 +2,10 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\Controller;
+use app\models\AuthModel;
+use app\models\NewsManagementModel;
 
 class NewsManagementController extends Controller
 {
@@ -23,6 +26,25 @@ class NewsManagementController extends Controller
 
     public function createProcess()
     {
+        $model = new NewsManagementModel();
+        $model->loadData($this->request->getAll());
+
+        $model->validate();
+
+        if ($model->errors !== null)
+        {
+            Application::$app->session->setFlash("error", "Neuspesno kreirana vest!");
+            return $this->router->viewWithParams("newsmanagement/create", "main", $model);
+        }
+
+        if (!$model->createNews($model))
+        {
+            Application::$app->session->setFlash("error", "Neuspesno kreirana vest!");
+            return $this->router->viewWithParams("newsmanagement/create", "main", $model);
+        }
+
+        Application::$app->session->setFlash("success", "Uspesno kreirana vest!");
+
         return $this->router->viewWithParams("newsmanagement/create", "main", null);
     }
 
@@ -49,7 +71,7 @@ class NewsManagementController extends Controller
     public function authorize(): array
     {
         return [
-            "guest"
+            "admin"
         ];
     }
 }

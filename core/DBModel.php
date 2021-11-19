@@ -26,7 +26,7 @@ abstract class DBModel extends Model
         $attributes = $this->attributesForUpdate();
 
         $this->data_updated = date('Y-m-d H-i-s');
-        $this->user_updated = Application::$app->session->getFlash("logged_in_user")["id"];
+        $this->user_updated = Application::$app->session->get("logged_in_user")->id;
 
         $sql = "UPDATE $table_name SET ";
 
@@ -57,8 +57,8 @@ abstract class DBModel extends Model
 
         $this->data_created = date('Y-m-d H-i-s');
         $this->data_updated = date('Y-m-d H-i-s');
-        $this->user_created = Application::$app->session->getFlash("logged_in_user")["id"];
-        $this->user_updated = Application::$app->session->getFlash("logged_in_user")["id"];
+        $this->user_created = Application::$app->session->get("logged_in_user")->id;
+        $this->user_updated = Application::$app->session->get("logged_in_user")->id;
         $this->active = true;
 
         $sql = "INSERT INTO $table_name (" . implode(',', $attributes) . ") VALUES (" . implode(',', $values) . ")";
@@ -94,7 +94,7 @@ abstract class DBModel extends Model
     {
         $table_name = $this->tableName();
 
-        $sql = "SELECT * FROM $table_name $where";
+        $sql = "SELECT * FROM $table_name where $where";
 
         $result = $this->db->con->query($sql) or die();
         $resultArray = [];

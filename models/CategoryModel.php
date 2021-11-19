@@ -14,7 +14,7 @@ class CategoryModel extends DBModel
 
     public function tableName()
     {
-        return "";
+        return "category";
     }
 
     public function attributes(): array

@@ -3,12 +3,23 @@
 namespace app\controllers;
 
 use app\core\Controller;
+use app\models\CategoryModel;
 
 class SettingsController extends Controller
 {
     public function home()
     {
         return $this->router->view("settings/home", "main");
+    }
+
+    public function getAll()
+    {
+        $model = new CategoryModel();
+        $data = $this->request->getOne("data");
+
+        $allData = $model->getAllWithStatement(" active = 1 and (category_name like '%$data%' or description like '%$data%')");
+
+        echo json_encode($allData); exit;
     }
 
     public function single()

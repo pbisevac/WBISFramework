@@ -2,53 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa7097c-f5a5-4f8d-befa-735f93a6ec68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/LogsManagementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/NewsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/NewsManagementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/SettingsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/UserManagementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/CategoryGroupModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/CategoryModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/LogsModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/NewsLocalizations.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/NewsModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/RoleModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/SubscriptionItemModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/SubscriptionModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/UserGroupsModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/logs/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/logs/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/logs/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/logs/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/logs/single.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/news/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/news/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/news/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/news/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/news/single.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/newsManagement/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/newsManagement/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/newsManagement/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/newsManagement/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/newsManagement/single.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/settings/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/settings/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/settings/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/settings/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/settings/single.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user/single.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/usermanagement/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/usermanagement/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/usermanagement/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/usermanagement/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/usermanagement/single.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/NewsCategoryModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/NewsManagementModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsManagementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsManagementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SettingsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/DBModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/DBModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/CategoryModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/CategoryModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/NewsLocalizations.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/NewsLocalizations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/news/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/news/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/newsManagement/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/newsManagement/create.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +86,7 @@
       <workItem from="1636963551700" duration="9307000" />
       <workItem from="1637077046905" duration="1832000" />
       <workItem from="1637137179663" duration="8181000" />
+      <workItem from="1637309651413" duration="8307000" />
     </task>
     <servers />
   </component>

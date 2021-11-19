@@ -68,7 +68,7 @@ class AuthController extends  Controller
 
         Application::$app->session->set("logged_in_user", $logedInUserModel->getUser($model->email));
 
-        $this->request->redirect("home");
+        $this->request->redirect("/home");
     }
 
     public function registrationProcess()
@@ -94,7 +94,7 @@ class AuthController extends  Controller
     public function authorize(): array
     {
         return [
-            "Guest"
+            "guest"
         ];
     }
 }
