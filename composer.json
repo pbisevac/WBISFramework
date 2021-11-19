@@ -1,0 +1,9 @@
+{
+    "name": "pbisevac/wbis-framework",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    }
+}
