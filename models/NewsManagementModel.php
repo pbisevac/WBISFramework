@@ -15,8 +15,8 @@ class NewsManagementModel extends DBModel
     public function rules(): array
     {
         return [
-            "title" => [self::RULE_REQUIRED],
-            "content" => [self::RULE_REQUIRED],
+            "title_news" => [self::RULE_REQUIRED],
+            "content_news" => [self::RULE_REQUIRED],
             "categories" => [self::RULE_REQUIRED]
         ];
     }
@@ -56,10 +56,10 @@ class NewsManagementModel extends DBModel
         {
             $news_id = mysqli_insert_id($model->db->con);
 
-            $news_localization_model = new NewsLocalizations();
-
+            $news_localization_model = new NewsLocalizationsModel();
             $news_localization_model->loadData($model);
-
+            $news_localization_model->id_news = $news_id;
+            //var_dump($news_localization_model); exit;
             $news_localization_model->create();
         }
 
@@ -68,6 +68,7 @@ class NewsManagementModel extends DBModel
 
         foreach ($this->categories as $category)
         {
+
             $news_category_model = new NewsCategoryModel();
 
             $news_category_model->id_news = $news_id;

@@ -71,13 +71,19 @@ if (Application::$app->session->getFlash("error")) {
                 </div>
             </div>
             <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Culture Code</label>
+                <div class="col-sm-10">
+                    <select class="form-select" name="culture_code" aria-label="multiple select example">
+                        <option value="sr">Serbian</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Category</label>
                 <div class="col-sm-10">
+                    <input type="text" class="form-control"  id="search_categories" placeholder="Pretraga kategorija...">
                     <select class="form-select" multiple="multiple" name="categories[]" id="categories" aria-label="multiple select example">
-                        <option selected="">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
                     </select>
                     <?php
                     if (isset($params) and $params->errors !== null and isset($params->errors['category']))
@@ -91,15 +97,6 @@ if (Application::$app->session->getFlash("error")) {
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-2 col-form-label">Culture Code</label>
-                <div class="col-sm-10">
-                    <select class="form-select" name="culture_code" aria-label="multiple select example">
-                        <option value="sr">Serbian</option>
-                        <option value="en">English</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mb-3">
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Create News</button>
                 </div>
@@ -110,37 +107,28 @@ if (Application::$app->session->getFlash("error")) {
 
 <script>
     $(document).ready(function() {
-        $("#categories").selectpicker({
-            liveSearch: true,
-            size: 7,
-            maxOptions: 7
-        }).ajaxSelectPicker({
-            ajax: {
+        $.ajax({
+            url: "/api/categories/getall",
+            data: { "search": $("#search_categories").val() },
+            method: "GET"
+        }).done(function(result) {
+            $("#categories").empty();
+            $.each(JSON.parse(result), function(i, item) {
+                $("#categories").append("<option value='"+ item.id +"'>" + item.category_name + "</option>");
+            });
+        });
+
+        $("#search_categories").keyup(function () {
+            $.ajax({
                 url: "/api/categories/getall",
-                type: "get",
-                data: function () {
-                    var params = {
-                        data: '{{{q}}}'
-                    };
-                    return params;
-                }
-            },
-            preprocessData: function (data) {
-                var dataArray = [];
-                for (var i = 0; i < data.length; i++) {
-                    var curr = data[i];
-                    dataArray.push(
-                        {
-                            'value': curr.id,
-                            'text': curr.category_name,
-                            'disabled': false
-                        }
-                    );
-                }
-                return dataArray;
-            },
-            preserveSelected: true
-            // minLength: 3
+                data: { "search": $("#search_categories").val() },
+                method: "GET"
+            }).done(function(result) {
+                $("#categories").empty();
+                $.each(JSON.parse(result), function(i, item) {
+                    $("#categories").append("<option value='"+ item.id +"'>" + item.category_name + "</option>");
+                });
+            });
         });
     });
 </script>

@@ -15,7 +15,7 @@ class SettingsController extends Controller
     public function getAll()
     {
         $model = new CategoryModel();
-        $data = $this->request->getOne("data");
+        $data = $this->request->getOne("search");
 
         $allData = $model->getAllWithStatement(" active = 1 and (category_name like '%$data%' or description like '%$data%')");
 
