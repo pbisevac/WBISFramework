@@ -566,6 +566,10 @@ h1, h2, h3, h4, h5, h6 {
   #main, #footer {
     margin-left: 300px;
   }
+  #main-2, #footer {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
 }
 @media (max-width: 1199px) {
   .toggle-sidebar .sidebar {

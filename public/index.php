@@ -11,10 +11,9 @@ use app\core\Application;
 
 $app = new Application();
 
-$app->router->get("home", "home");
-$app->router->get("", "home");
-$app->router->get("test", "home");
-$app->router->get("index", "home");
+$app->router->get("home", [NewsController::class, "home"]);
+$app->router->get("", [NewsController::class, "home"]);
+$app->router->get("index", [NewsController::class, "home"]);
 $app->router->get("accessDenied", [AuthController::class, "accessDenied"]);
 $app->router->get("notFound", [AuthController::class, "notFound"]);
 $app->router->get("registration", [AuthController::class, "registration"]);
@@ -23,6 +22,8 @@ $app->router->get("logout", [AuthController::class, "logout"]);
 $app->router->get("createUser", [UserController::class, "create"]);
 $app->router->get("homeUser", [UserController::class, "home"]);
 $app->router->get("newsmanagement/create", [NewsManagementController::class, "create"]);
+$app->router->get("news/home", [NewsController::class, "home"]);
+$app->router->get("news/getnews", [NewsController::class, "getNews"]);
 $app->router->get("reports/numberOfNews", [ReportController::class, "numberOfNews"]);
 $app->router->get("reports/home", [ReportController::class, "home"]);
 $app->router->get("reports", [ReportController::class, "home"]);

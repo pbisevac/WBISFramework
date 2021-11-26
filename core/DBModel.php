@@ -46,19 +46,14 @@ abstract class DBModel extends Model
 
     public function create()
     {
-        if ( Application::$app->session->getFlash("logged_in_user"))
-        {
-            return false;
-        }
-
         $table_name = $this->tableName();
         $attributes = $this->attributes();
         $values = array_map(fn($attr) => ":$attr", $attributes);
 
         $this->data_created = date('Y-m-d H-i-s');
         $this->data_updated = date('Y-m-d H-i-s');
-        $this->user_created = Application::$app->session->get("logged_in_user")->id;
-        $this->user_updated = Application::$app->session->get("logged_in_user")->id;
+        $this->user_created = Application::$app->session->get("logged_in_user")->id ?? 1;
+        $this->user_updated = Application::$app->session->get("logged_in_user")->id ?? 1;
         $this->active = true;
 
         $sql = "INSERT INTO $table_name (" . implode(',', $attributes) . ") VALUES (" . implode(',', $values) . ")";

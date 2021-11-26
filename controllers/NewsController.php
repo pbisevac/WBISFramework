@@ -4,13 +4,23 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
+use app\models\NewsModel;
 use app\models\UserModel;
 
 class NewsController extends Controller
 {
     public function home()
     {
-        return $this->router->view("news/home", "main");
+        return $this->router->view("news/home", "empty");
+    }
+
+    public function getNews()
+    {
+        $model = new NewsModel();
+
+        $model->loadData($this->request->getAll());
+
+        echo json_encode($model->getNews()); exit;
     }
 
     public function single()
